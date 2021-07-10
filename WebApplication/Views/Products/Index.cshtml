@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-3">Our Products</h1>
+
+    <!-- todo: implement category selector -->
+    
+    @*<nav class="nav nav-bar w-100 my-3">
+        <a class="nav-link nav-link--black nav-link--active" href="">All</a>
+        <a class="nav-link nav-link--black" href="">Clothing</a>
+        <a class="nav-link nav-link--black" href="">Sports</a>
+        <a class="nav-link nav-link--black" href="">Other</a>
+    </nav>*@
+    
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/Ball.jpg" alt="Ball">
+                    <div class="card-body">
+                        <h2 class="product-title">Ball</h2>
+                        <p><span class="badge badge-info category">Sports</span></p>
+                        <p class="card-text">
+                            <span class="price">£9.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/Banjo.jpg" alt="Banjo">
+                    <div class="card-body">
+                        <h2 class="product-title">Banjo</h2>
+                        <p><span class="badge badge-info category">Other</span></p>
+                        <p class="card-text">
+                            <span class="price">£49.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/Drone.jpg" alt="Drone">
+                    <div class="card-body">
+                        <h2 class="product-title">Drone</h2>
+                        <p><span class="badge badge-info category">Other</span></p>
+                        <p class="card-text">
+                            <span class="price">£99.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/PingPongBalls.jpg" alt="PingPongBalls">
+                    <div class="card-body">
+                        <h2 class="product-title">Ping Pong Balls</h2>
+                        <p><span class="badge badge-info category">Sports</span></p>
+                        <p class="card-text">
+                            <span class="price">£2.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/TShirt.jpg" alt="TShirt">
+                    <div class="card-body">
+                        <h2 class="product-title">T-Shirt</h2>
+                        <p><span class="badge badge-info category">Clothing</span></p>
+                        <p class="card-text">
+                            <span class="price">£19.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/coat.jpg" alt="Coat">
+                    <div class="card-body">
+                        <h2 class="product-title">Coat</h2>
+                        <p><span class="badge badge-info category">Clothing</span></p>
+                        <p class="card-text">
+                            <span class="price">£39.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
