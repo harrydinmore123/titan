@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
+using PagedList.Mvc;
+using PagedList;
 
 namespace WebApplication.Controllers
 {
     public class BlogController : Controller
     {
         // GET: BlogController
-        public ActionResult List()
+        public ActionResult List(int ? i)
         {
             var model = new List<BlogItem>()
             {
@@ -27,7 +29,10 @@ namespace WebApplication.Controllers
                 new BlogItem { Title = "Blog Item 10", DateCreated = new DateTime(2020,10,16), Description = "Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."}
             };
 
-            return View(model);
+
+            model.Sort((x, y) => DateTime.Compare(y.DateCreated, x.DateCreated));
+
+            return View(model.ToPagedList(i ?? 1, 3));
         }
      
 

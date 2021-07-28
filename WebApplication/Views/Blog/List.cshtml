@@ -1,8 +1,11 @@
-﻿@model IEnumerable<WebApplication.Models.BlogItem>
+﻿@model IPagedList<WebApplication.Models.BlogItem>
 
 @{
     ViewData["Title"] = "Blog";
 }
+
+@using PagedList.Mvc;
+@using PagedList;
 
 <div class="text-center">
     <h1 class="display-4 mb-3">Our Blog</h1>
@@ -12,30 +15,33 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.First().Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.First().Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateCreated)
+                @Html.DisplayNameFor(model => model.First().DateCreated)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td width="20%">
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="20%">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<!-- // Html.PagedListPager(Model, page => Url.Action("List", new { page })) -->
